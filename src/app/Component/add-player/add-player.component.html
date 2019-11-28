@@ -1,0 +1,51 @@
+<form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter email" [(ngModel)]="playerName" name="playerName">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Player Renk</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter email" [(ngModel)]="playerRenk" name="playerRenk">
+    </div>
+
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Player Number</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter email" [(ngModel)]="playerNumber"name="playerNumber">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Player Runs</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter email" [(ngModel)]="playerRuns"name="playerRuns">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Player Century</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter email" [(ngModel)]="playerTotalCentury"name="playerTotalCentury">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Total Wicket</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter Wicket" [(ngModel)]="playerTotalWicket" name="playerTotalWicket">
+    </div>
+
+
+    <div class="input-group mb-3" >
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Chose Team</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01">
+            <option selected >Choose...</option>
+            <option *ngFor="let item of team" [(ngValue)]="item.id" name = "teamId" >{{item.teamName}}</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click) ="addPlayer()">Submit</button>
+</form>

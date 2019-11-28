@@ -1,0 +1,54 @@
+<div class="container">
+
+    <div class="col-xs-4" style="display: inline;">
+        <div class="row">
+            <div><a href="#">
+                    <h4 style="margin-right: 100px; display: inline;">Add Team</h4> <i class="fa fa-plus"
+                        aria-hidden="true"></i>
+                </a> </div>
+        </div>
+        <div class="row" style="margin-top: 15px;">
+            <div><a routerLink ="/addPlayer">
+                    <h4 style="margin-right: 93px; display: inline;">Add Player</h4> <i class="fa fa-plus"
+                        aria-hidden="true"></i>
+                </a> </div>
+        </div>
+
+
+        <div class="row" style="margin-top: 30px;">
+            <h4 style="display: inline;">Club Name</h4>
+        </div>
+
+        <div class="row" style="background-color: coral; margin-top: 10px;" *ngFor="let item of tesam">
+            <div style="display: inline; margin: 10px;" >
+                <h5 style="display: inline;">{{item.teamName}}</h5>
+                <a  (click) = "getPlayers(item.id)" style="vertical-align: text-bottom; "><i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-8">
+        <div class="row" style="text-align: center;">
+            <div class="col-xs-1" style="margin: 5px;"> ID</div>
+            <div class="col-xs-1" style="margin: 5px;"> Name</div>
+            <div class="col-xs-1" style="margin: 5px;"> Renk</div>
+            <div class="col-xs-1" style="margin: 5px;"> Number</div>
+            <div class="col-xs-1" style="margin: 5px;"> Runs</div>
+            <div class="col-xs-1" style="margin: 5px;"> Century</div>
+            <div class="col-xs-1" style="margin: 5px;"> Wicket</div>
+        </div>
+
+        <div class="row" style="text-align: center;" *ngFor="let item of player">
+            <div class="col-xs-1" style="margin: 5px;"> {{item.id}}</div>
+            <div class="col-xs-1" style="margin: 5px;"> {{item.playerName}}</div>
+            <div class="col-xs-1" style="margin: 5px;"> {{item.playerRenk}}</div>
+            <div class="col-xs-1" style="margin: 5px;"> {{item.playerNumber}}</div>
+            <div class="col-xs-1" style="margin: 5px;"> {{item.playerRuns}}</div>
+            <div class="col-xs-1" style="margin: 5px;"> {{item.playerTotalCentury}}</div>
+            <div class="col-xs-1" style="margin: 5px;"> {{item.playerTotalWicket}}</div>
+            <div class="col-xs-1" style="margin: 5px;"> <a href="#">Edit</a></div>
+            <div class="col-xs-1" style="margin: 5px;"> <a href="#">Delete</a></div>
+        </div>
+    </div>
+</div>
